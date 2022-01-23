@@ -4,6 +4,7 @@ import { useEffect, useReducer } from "react";
 import quotesReducer, { QuoteActionKind } from '../../services/quotesReducer';
 import { getQuotes } from '../../services/quoteService/quoteService';
 import './RandomQuote.css';
+import { Link } from 'react-router-dom';
 
 function RandomQuote() {
     const [{ isLoading, selectedAuthor, quoteList, quotesFetched }, dispatch] = useReducer(
@@ -15,8 +16,11 @@ function RandomQuote() {
         quotesFetched: 0
       }
     );
+  // const navigate = useNavigate();
+  // const navigationCallback = useCallback(() => navigate(`/Author?${selectedAuthor}`, {replace: true}), [navigate, selectedAuthor]);
 
   useEffect(() => {
+
     const fetchData = async function (selectedAuthor: string | null) {
       let result = await getQuotes(selectedAuthor);
       dispatch({ type: QuoteActionKind.SetQuotesList, payload: result?.data! });
@@ -29,9 +33,12 @@ function RandomQuote() {
 
     return (
         <div className="random-quote">
-            <button onClick={() => dispatch({ type: QuoteActionKind.RequestQuotes, payload: "" })
+          <Link to="/">
+          <button onClick={() => dispatch({ type: QuoteActionKind.RequestQuotes, payload: "" })
             }
             >Get me a new quote!</button>
+          </Link>
+            
             <QuoteContainer quotes={quoteList} dispatch={dispatch} />
         </div>
     )

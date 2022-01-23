@@ -4,9 +4,9 @@ import './App.css'
 
 function App() {
   return (
-    <div className="App">
-      <RandomQuote />
-    </div>
+      <div className="App">
+        <RandomQuote />
+      </div>
   );
 }
 
