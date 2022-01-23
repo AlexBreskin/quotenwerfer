@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from '@testing-library/react';
-import { Quote } from '../../../services/quoteService/quote';
 import SingleQuote from '../SingleQuote';
+import { Quote } from '../../../../../services/quoteService/quote';
 
 describe("SingleQuote", () => {
     afterEach(() => {
@@ -9,6 +9,7 @@ describe("SingleQuote", () => {
     })
 
     const dummyQuote: Quote = {
+        _id: "1",
         quoteText: "Test quote",
         quoteAuthor: "Test Author",
         quoteGenre: "Test Genre"
