@@ -1,9 +1,12 @@
 import React from 'react';
 import RandomQuote from '../randomQuote/RandomQuote';
+import './App.css'
 
 function App() {
   return (
-    <RandomQuote />
+    <div className="App">
+      <RandomQuote />
+    </div>
   );
 }
 

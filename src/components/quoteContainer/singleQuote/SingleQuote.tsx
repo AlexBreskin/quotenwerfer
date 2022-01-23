@@ -1,5 +1,6 @@
 import React from 'react';
 import { Quote } from '../../../services/quoteService/quote';
+import './SingleQuote.css';
 
 type QuoteProps = {
     quote: Quote
@@ -13,7 +14,7 @@ function SingleQuote(props: QuoteProps) {
                 {quoteText}
             </div>
             <div className="quote-author">- {quoteAuthor}</div>
-            <div className="quote-genre">{quoteGenre}</div>
+            <div className="quote-genre">Genre: {quoteGenre}</div>
         </div>
     )
 }
