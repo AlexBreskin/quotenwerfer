@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Quote } from "../../../../services/quoteService/quote";
+import { Quote } from '../../../services/quoteService/quote';
 import QuoteContainer from '../QuoteContainer';
 
 

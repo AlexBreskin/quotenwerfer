@@ -1,5 +1,5 @@
 import React from 'react';
-import { Quote } from '../../../../services/quoteService/quote';
+import { Quote } from '../../../services/quoteService/quote';
 
 type QuoteProps = {
     quote: Quote
