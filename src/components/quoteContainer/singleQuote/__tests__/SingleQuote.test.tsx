@@ -1,6 +1,7 @@
 import { cleanup, render, screen } from '@testing-library/react';
 import SingleQuote from '../SingleQuote';
-import { Quote } from '../../../../../services/quoteService/quote';
+import { Quote } from '../../../../services/quoteService/quote';
+import { MemoryRouter } from 'react-router-dom';
 
 describe("SingleQuote", () => {
 
@@ -18,20 +19,20 @@ describe("SingleQuote", () => {
 
     it("Should render the text of a quote", () =>
     {
-        render(<SingleQuote quote={dummyQuote} dispatch={jest.fn()} />);
-        const quoteText = screen.getByText(dummyQuote.quoteText);
+        render(<MemoryRouter><SingleQuote quote={dummyQuote} dispatch={jest.fn()} /></MemoryRouter >);
+        const quoteText = screen.getByText(dummyQuote.quoteText, {exact: false});
         expect(quoteText).toBeInTheDocument();
     })
     
     it("Should render the quote's author", () =>
     {
-        render(<SingleQuote quote={dummyQuote} dispatch={jest.fn()} />);
+        render(<MemoryRouter><SingleQuote quote={dummyQuote} dispatch={jest.fn()} /></MemoryRouter>);
         const quoteAuthor = screen.getByText(dummyQuote.quoteAuthor, {exact: false});
         expect(quoteAuthor).toBeInTheDocument();
     })
     it("Should render the quote's genre", () =>
     {
-        render(<SingleQuote quote={dummyQuote} dispatch={jest.fn()}/>);
+        render(<MemoryRouter><SingleQuote quote={dummyQuote} dispatch={jest.fn()}/></MemoryRouter>);
         const quoteGenre = screen.getByText(dummyQuote.quoteGenre, {exact: false});
         expect(quoteGenre).toBeInTheDocument();
     })

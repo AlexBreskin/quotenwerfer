@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { Quote } from '../../../services/quoteService/quote';
 import QuoteContainer from '../QuoteContainer';
-
+import { MemoryRouter } from 'react-router-dom';
 
 describe("QuoteContainer", () => {
     const dummyQuotes: Quote[] = [{
@@ -24,7 +24,7 @@ describe("QuoteContainer", () => {
     }]
 
     it("Should contain provided quotes", () => {
-        render(<QuoteContainer quotes={dummyQuotes} dispatch={jest.fn()} />);
+        render(<MemoryRouter><QuoteContainer quotes={dummyQuotes} dispatch={jest.fn()} /></MemoryRouter>);
         const quoteTextFirst = screen.getByText(dummyQuotes[0].quoteText);
         const quoteTextSecond = screen.getByText(dummyQuotes[1].quoteText);
         const quoteTextThird = screen.getByText(dummyQuotes[2].quoteText);
