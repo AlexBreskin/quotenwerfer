@@ -31,6 +31,9 @@
 .quote-author {
   margin-top: 2em;
   text-align: right;
+  cursor: pointer;
+  color: blueviolet;
+  text-decoration: underline;
 }
 
 .quote-genre {

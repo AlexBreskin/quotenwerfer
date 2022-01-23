@@ -6,12 +6,13 @@ import { getQuotes } from '../../services/quoteService/quoteService';
 import './RandomQuote.css';
 
 function RandomQuote() {
-    const [{ isLoading, selectedAuthor, quoteList }, dispatch] = useReducer(
+    const [{ isLoading, selectedAuthor, quoteList, quotesFetched }, dispatch] = useReducer(
       quotesReducer,
       {
         quoteList: [],
         selectedAuthor: null,
         isLoading: true,
+        quotesFetched: 0
       }
     );
 
@@ -22,13 +23,13 @@ function RandomQuote() {
     };
     fetchData(selectedAuthor);
     return () => {};
-  }, [selectedAuthor]);
+  }, [selectedAuthor, quotesFetched]);
 
     if (isLoading) return <div className='loading'>Getting new quote...</div>
 
     return (
         <div className="random-quote">
-            <button onClick={() => dispatch({ type: QuoteActionKind.RequestQuotes, payload: "" })    
+            <button onClick={() => dispatch({ type: QuoteActionKind.RequestQuotes, payload: "" })
             }
             >Get me a new quote!</button>
             <QuoteContainer quotes={quoteList} dispatch={dispatch} />

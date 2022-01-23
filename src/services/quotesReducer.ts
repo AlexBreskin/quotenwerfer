@@ -14,6 +14,7 @@ interface IState {
   quoteList: Quote[];
   selectedAuthor: string | null;
   isLoading: boolean;
+  quotesFetched: number;
 }
 
 const quotesReducer = (state: IState, action: QuoteAction) => {
@@ -24,6 +25,7 @@ const quotesReducer = (state: IState, action: QuoteAction) => {
         quoteList: [],
         selectedAuthor: action.payload,
         isLoading: true,
+        quotesFetched: state.quotesFetched + 1,
       } as IState;
     }
     case QuoteActionKind.SetQuotesList: {
