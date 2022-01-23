@@ -2,6 +2,8 @@
 
 A simple react application that displays quotes from the [QuoteGarden API](https://pprathameshmore.github.io/QuoteGarden/)
 
+This application is currently running on a [Netlify website](https://61ed41294855d8793e23546c--wizardly-wescoff-4cfe82.netlify.app/) and continuously deploying from this git repo
+
 # Features
 
 - A random quote will show up when first loading the page
@@ -9,6 +11,7 @@ A simple react application that displays quotes from the [QuoteGarden API](https
 - When the author of the quote is selected, it will show a list of their quotes
 - You can navigate back to the main screen from the author's quote list
 - A quote genre will show below the author
+- Routing between Author quotes and Single Quotes
 
 # Technology
 
