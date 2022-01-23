@@ -9,6 +9,7 @@ A simple react application that displays quotes from the [QuoteGarden API](https
 - When the author of the quote is selected, it will show a list of their quotes
 - You can navigate back to the main screen from the author's quote list
 - A quote genre will show below the author
+- Routing between Author quotes and Single Quotes
 
 # Technology
 
