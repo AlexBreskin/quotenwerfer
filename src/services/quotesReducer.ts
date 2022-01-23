@@ -5,7 +5,7 @@ export enum QuoteActionKind {
   SetQuotesList = "SetQuotesList",
 }
 
-interface QuoteAction {
+export interface QuoteAction {
   type: QuoteActionKind;
   payload: Quote[] | string;
 }

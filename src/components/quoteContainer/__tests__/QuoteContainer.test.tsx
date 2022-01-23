@@ -24,7 +24,7 @@ describe("QuoteContainer", () => {
     }]
 
     it("Should contain provided quotes", () => {
-        render(<QuoteContainer quotes={dummyQuotes} />);
+        render(<QuoteContainer quotes={dummyQuotes} dispatch={jest.fn()} />);
         const quoteTextFirst = screen.getByText(dummyQuotes[0].quoteText);
         const quoteTextSecond = screen.getByText(dummyQuotes[1].quoteText);
         const quoteTextThird = screen.getByText(dummyQuotes[2].quoteText);
